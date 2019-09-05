@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/labtest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/service1"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lab Test"
+            android:layout_marginLeft="40dp"
+            android:textSize="18dp"
+            android:textColor="#000000"
+            android:clickable="true"
+            android:drawableRight="@drawable/right_arrow"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/household"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/services2"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Household Supllies"
+            android:layout_marginLeft="40dp"
+            android:textSize="18dp"
+            android:textColor="#000000"
+            android:clickable="true"
+            android:drawableRight="@drawable/right_arrow"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/healthrecode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/services3"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Health Records"
+            android:layout_marginLeft="40dp"
+            android:textSize="18dp"
+            android:textColor="#000000"
+            android:clickable="true"
+            android:drawableRight="@drawable/right_arrow"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/doctor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/services4"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Book Doctor's Appointment"
+            android:layout_marginLeft="40dp"
+            android:textSize="18dp"
+            android:textColor="#000000"
+            android:clickable="true"
+            android:drawableRight="@drawable/right_arrow"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Home"
+        android:id="@+id/bottom_home"
+        android:icon="@drawable/ic_home_black_24dp"/>
+
+    <item android:title="Me"
+        android:id="@+id/bottom_you"
+        android:icon="@drawable/person2"/>
+
+    <item android:title="Orders"
+        android:id="@+id/bottom_orders"
+        android:icon="@drawable/orders"/>
+
+<!--    <item android:title="Offers"-->
+<!--        android:id="@+id/bottom_offers"-->
+<!--        android:icon="@drawable/offers"/>-->
+
+    <item android:title="Services"
+        android:id="@+id/bottom_services"
+        android:icon="@drawable/services"/>
+
+</menu>

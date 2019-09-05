@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "148783416593",
+    "firebase_url": "https://raymedicals-ff904.firebaseio.com",
+    "project_id": "raymedicals-ff904",
+    "storage_bucket": "raymedicals-ff904.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:148783416593:android:51e15f523b397176",
+        "android_client_info": {
+          "package_name": "com.example.ray_medicals"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "148783416593-58snod4osou5a068dt9r7c3gu3lppnfp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ray_medicals",
+            "certificate_hash": "a927996d30fe4d38e93a0a7d94343b4b98276286"
+          }
+        },
+        {
+          "client_id": "148783416593-40c31s6jvehikbkfceefkpr5mcl8glmq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBps7ldXhZzJXcFKGr9nQuI_MH01mLRsnI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "148783416593-40c31s6jvehikbkfceefkpr5mcl8glmq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
