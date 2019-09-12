@@ -6,13 +6,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class Services_page extends Fragment {
-    LinearLayout doctors,labtest,household,healthrecode;
+    TextView doctors,labtest,household,healthrecode;
+
     View view;
 
 
@@ -22,10 +24,10 @@ public class Services_page extends Fragment {
 
         view=inflater.inflate(R.layout.bottom_services,container,false);
 
-        doctors=(LinearLayout)view.findViewById(R.id.doctor);
-        labtest=(LinearLayout)view.findViewById(R.id.labtest);
-        household=(LinearLayout)view.findViewById(R.id.household);
-        healthrecode=(LinearLayout)view.findViewById(R.id.healthrecode);
+        doctors=(TextView) view.findViewById(R.id.doctor);
+        labtest=(TextView)view.findViewById(R.id.labtest);
+        household=(TextView)view.findViewById(R.id.household);
+        healthrecode=(TextView)view.findViewById(R.id.healthrecode);
 
         doctors.setOnClickListener(new View.OnClickListener() {
             @Override

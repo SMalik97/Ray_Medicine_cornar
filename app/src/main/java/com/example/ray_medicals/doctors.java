@@ -76,6 +76,8 @@ public class doctors extends AppCompatActivity {
             url="https://raymedicinecorner.com/shop/?swoof=1&v=c86ee0d9d7ed&product_cat=family-care";
         }else if (a.equals("health")){
             url="http://login.atnmedicare.com/";
+        }else if (a.equals("req")){
+            url="https://raymedicinecorner.com/prescription/?v=c86ee0d9d7ed";
         }else{
             url="http://atnmedicare.com/atnkunmadmunmedicare/";
         }
@@ -98,7 +100,7 @@ public class doctors extends AppCompatActivity {
         swipe.setRefreshing(true);
 
 
-        //swipe refresh...........
+//swipe refresh...........
         swipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -107,7 +109,7 @@ public class doctors extends AppCompatActivity {
             }
         });
 
-        mWebView = (WebView) findViewById(R.id.webView);
+        mWebView=(WebView)findViewById(R.id.webView);
         mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.getSettings().setLoadWithOverviewMode(true);
         mWebView.getSettings().setUseWideViewPort(true);
@@ -120,7 +122,7 @@ public class doctors extends AppCompatActivity {
 
         mWebView.setDownloadListener(new DownloadListener() {
             @Override
-            public void onDownloadStart(String url, String userAgent, String contentDisposition, String mimeType, long contentLength) {
+            public void onDownloadStart(String url, String userAgent, String      contentDisposition , String mimeType, long contentLength) {
                 DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
                 request.setMimeType(mimeType);
 //------------------------COOKIE!!------------------------
@@ -153,18 +155,17 @@ public class doctors extends AppCompatActivity {
 
                 super.onPageFinished(view, url);
                 swipe.setRefreshing(false);
-                pb.setVisibility(View.INVISIBLE);
             }
 
             //to make call
             @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                if (url.startsWith("tel:")) {
-                    Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse(url));
+            public boolean shouldOverrideUrlLoading(WebView view,String url){
+                if (url.startsWith("tel:")){
+                    Intent intent=new Intent(Intent.ACTION_DIAL,Uri.parse(url));
                     startActivity(intent);
                     return true;
                 }
-                if (url.startsWith("mailto:")) {
+                if (url.startsWith("mailto:")){
                     Intent f = new Intent(Intent.ACTION_SEND);
                     f.putExtra(Intent.EXTRA_EMAIL, new String[]{"info@atnmedicare.com"});
                     f.putExtra(Intent.EXTRA_SUBJECT, "Feedback from ATN Medicare");
@@ -189,16 +190,15 @@ public class doctors extends AppCompatActivity {
 
                 super.onProgressChanged(view, newProgress);
             }
-
             // onActivityResult attached before constructor
-            protected void openFileChooser(ValueCallback uploadMsg, String acceptType) {
+            protected void openFileChooser(ValueCallback uploadMsg, String acceptType)
+            {
                 mUploadMessage = uploadMsg;
                 Intent i = new Intent(Intent.ACTION_GET_CONTENT);
                 i.addCategory(Intent.CATEGORY_OPENABLE);
                 i.setType("image/*");
                 startActivityForResult(Intent.createChooser(i, "File Browser"), FILECHOOSER_RESULTCODE);
             }
-
             @Override
 
             public void onReceivedTitle(WebView view, String title) {
@@ -208,6 +208,7 @@ public class doctors extends AppCompatActivity {
 
 
             }
+
 
 
             @Override
@@ -222,7 +223,8 @@ public class doctors extends AppCompatActivity {
 
             // For Lollipop 5.0+ Devices
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-            public boolean onShowFileChooser(WebView mWebView, ValueCallback<Uri[]> filePathCallback, WebChromeClient.FileChooserParams fileChooserParams) {
+            public boolean onShowFileChooser(WebView mWebView, ValueCallback<Uri[]> filePathCallback, WebChromeClient.FileChooserParams fileChooserParams)
+            {
                 if (uploadMessage != null) {
                     uploadMessage.onReceiveValue(null);
                     uploadMessage = null;
@@ -231,9 +233,11 @@ public class doctors extends AppCompatActivity {
                 uploadMessage = filePathCallback;
 
                 Intent intent = fileChooserParams.createIntent();
-                try {
+                try
+                {
                     startActivityForResult(intent, REQUEST_SELECT_FILE);
-                } catch (ActivityNotFoundException e) {
+                } catch (ActivityNotFoundException e)
+                {
                     uploadMessage = null;
                     Toast.makeText(getApplicationContext(), "Cannot Open File Chooser", Toast.LENGTH_LONG).show();
                     return false;
@@ -242,7 +246,8 @@ public class doctors extends AppCompatActivity {
             }
 
             //For Android 4.1 only
-            protected void openFileChooser(ValueCallback<Uri> uploadMsg, String acceptType, String capture) {
+            protected void openFileChooser(ValueCallback<Uri> uploadMsg, String acceptType, String capture)
+            {
                 mUploadMessage = uploadMsg;
                 Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
                 intent.addCategory(Intent.CATEGORY_OPENABLE);
@@ -250,7 +255,8 @@ public class doctors extends AppCompatActivity {
                 startActivityForResult(Intent.createChooser(intent, "File Browser"), FILECHOOSER_RESULTCODE);
             }
 
-            protected void openFileChooser(ValueCallback<Uri> uploadMsg) {
+            protected void openFileChooser(ValueCallback<Uri> uploadMsg)
+            {
                 mUploadMessage = uploadMsg;
                 Intent i = new Intent(Intent.ACTION_GET_CONTENT);
                 i.addCategory(Intent.CATEGORY_OPENABLE);
@@ -262,15 +268,20 @@ public class doctors extends AppCompatActivity {
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            if (requestCode == REQUEST_SELECT_FILE) {
+    public void onActivityResult(int requestCode, int resultCode, Intent intent)
+    {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+        {
+            if (requestCode == REQUEST_SELECT_FILE)
+            {
                 if (uploadMessage == null)
                     return;
                 uploadMessage.onReceiveValue(WebChromeClient.FileChooserParams.parseResult(resultCode, intent));
                 uploadMessage = null;
             }
-        } else if (requestCode == FILECHOOSER_RESULTCODE) {
+        }
+        else if (requestCode == FILECHOOSER_RESULTCODE)
+        {
             if (null == mUploadMessage)
                 return;
 // Use MainActivity.RESULT_OK if you're implementing WebView inside Fragment
@@ -278,29 +289,85 @@ public class doctors extends AppCompatActivity {
             Uri result = intent == null || resultCode != MainActivity.RESULT_OK ? null : intent.getData();
             mUploadMessage.onReceiveValue(result);
             mUploadMessage = null;
-        } else
+        }
+        else
             Toast.makeText(getApplicationContext(), "Failed to Upload Image", Toast.LENGTH_LONG).show();
 
     }
 
 
-    @Override
 
-    public void onBackPressed() {
+//    @Override
+//
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//
+//        MenuInflater myMenuInflater = getMenuInflater();
+//
+//        myMenuInflater.inflate(R.menu.super_menu, menu);
+//
+//        return super.onCreateOptionsMenu(menu);
+//
+//    }
 
-        if (mWebView.canGoBack()) {
 
-            mWebView.goBack();
 
-        } else {
+//    @Override
+//
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//
+//        switch (item.getItemId()) {
+//
+//
+//
+//            case R.id.exit:
+//                AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+//
+//                dialog.setTitle("Exit App");
+//
+//                dialog.setMessage("Do you want to exit?");
+//
+//                dialog.setPositiveButton("EXIT", new DialogInterface.OnClickListener() {
+//
+//                    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+//                    @Override
+//
+//                    public void onClick(DialogInterface dialog, int which) {
+//
+//                        finishAffinity();
+//
+//                    }
+//
+//                });
+//
+//                dialog.setCancelable(false);
+//
+//                dialog.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+//
+//                    @Override
+//
+//                    public void onClick(DialogInterface dialog, int which) {
+//
+//                        dialog.dismiss();
+//
+//                    }
+//
+//                }).show();
+//
+//                break;
+//
+//
+//
+//        }
+//
+//        return true;
+//
+//    }
 
-            finish();
-        }
 
-    }
 
-    //method for runtime permission
-    public void runtimePermission() {
+
+       //method for runtime permission
+    public void runtimePermission(){
         Dexter.withActivity(this).withPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE).withListener(new PermissionListener() {
             @Override
             public void onPermissionGranted(PermissionGrantedResponse response) {
@@ -324,4 +391,6 @@ public class doctors extends AppCompatActivity {
 
 
 }
+
+
 

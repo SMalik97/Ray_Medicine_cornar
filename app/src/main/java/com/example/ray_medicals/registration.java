@@ -80,7 +80,7 @@ public class registration extends AppCompatActivity {
     public void showdialog(){
         AlertDialog.Builder builder=new AlertDialog.Builder(this);
         builder.setTitle("Message");
-        builder.setMessage("Sorry! Medicine delivery service to your address is not available!");
+        builder.setMessage("Sorry! Medicine delivery service for your address is not available yet. It will available shortly.");
         builder.setPositiveButton("Register Anyway", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {

@@ -39,8 +39,10 @@ public class Login extends AppCompatActivity {
     String login_phone="Null";
     String url="https://raymedicinecorner.com/android_app/check_ph.php";
     List<List_Data_cp> list_data_cp;
-    boolean f;
+    boolean f=false;
     ProgressDialog progressDialog;
+    String[] phcheck=new String[500];
+    int ln;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -100,12 +102,17 @@ public class Login extends AppCompatActivity {
                             JSONObject ob=array.getJSONObject(i);
                             final List_Data_cp listData=new List_Data_cp(ob.getString("phone_no"));
                             list_data_cp.add(listData);
-                            if (mobno.getText().toString().trim().equals(listData.getPhone())){
-                                f=true;
-                            }else {
-                                f=false;
-                            }
+                            phcheck[i]=listData.getPhone();
+                            ln=array.length();
                         }
+                        f=false;
+                        for (int j=0;j<ln;j++){
+                            if (phcheck[j].equals(mobno.getText().toString().trim())){
+                                f=true;
+                            }
+
+                        }
+
                         if (f){
                             progressDialog.dismiss();
                             SharedPreferences sp = getSharedPreferences(login_status, Context.MODE_PRIVATE);
@@ -121,7 +128,6 @@ public class Login extends AppCompatActivity {
                             Intent i=new Intent(getApplicationContext(),MainActivity.class);
                             startActivity(i);
                             finish();
-
 
                         }else{
                             progressDialog.dismiss();

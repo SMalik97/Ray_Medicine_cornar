@@ -16,7 +16,86 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
        >
-    <LinearLayout
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name (required):"
+            android:layout_marginLeft="20dp"
+            android:textColor="#000000"
+            android:textSize="18dp"/>
+        <EditText
+            android:id="@+id/order_name"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Name"
+            android:layout_marginLeft="20dp"
+            android:paddingLeft="5dp"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edittext_background"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone Number (required):"
+            android:layout_marginLeft="20dp"
+            android:textColor="#000000"
+            android:textSize="18dp"/>
+        <EditText
+            android:id="@+id/order_phone"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Phone Number"
+            android:layout_marginLeft="20dp"
+            android:paddingLeft="5dp"
+            android:inputType="number"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edittext_background"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Address (required):"
+            android:layout_marginLeft="20dp"
+            android:textColor="#000000"
+            android:textSize="18dp"/>
+        <EditText
+            android:id="@+id/order_address"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Address"
+            android:layout_marginLeft="20dp"
+            android:paddingLeft="5dp"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edittext_background"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pin (required):"
+            android:layout_marginLeft="20dp"
+            android:textColor="#000000"
+            android:textSize="18dp"/>
+        <EditText
+            android:id="@+id/order_pin"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Pin"
+            android:layout_marginLeft="20dp"
+            android:paddingLeft="5dp"
+            android:inputType="number"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edittext_background"/>
+
+
+        <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -38,14 +117,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="serif"
-                    android:text="Order by Prescription"
+                    android:text="Upload Prescription"
                     android:textColor="#000000"
-                    android:textSize="24sp"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="20dp"
                     android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/cam"
-                    android:layout_width="40dp"
+                    android:layout_width="35dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="5dp"
                     android:src="@drawable/ic_camera_alt_black_24dp" />
@@ -56,26 +137,46 @@
 
     <ImageView
         android:id="@+id/pesimg"
-        android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:srcCompat="@drawable/ic_wallpaper_black_24dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description:"
+            android:layout_marginLeft="20dp"
+            android:textColor="#000000"
+            android:textSize="18dp"/>
+        <EditText
+            android:id="@+id/order_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="100dp"
+            android:hint="Description"
+            android:layout_marginLeft="20dp"
+            android:paddingLeft="5dp"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edittext_background"/>
+
 
     <Button
         android:id="@+id/upload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Order Now"
+        android:text="          Order Now           "
         android:textAllCaps="false"
+        android:textColor="#ffffff"
         android:textSize="16dp"
         android:layout_gravity="center_horizontal"
         android:textStyle="bold"
+        android:background="@drawable/order_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pesimg"

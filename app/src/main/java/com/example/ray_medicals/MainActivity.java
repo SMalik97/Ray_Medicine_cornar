@@ -186,12 +186,14 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.order_medicine) {
-            Fragment fragment5 = new Order_page();
-            FragmentManager manager5 = getSupportFragmentManager();
-            FragmentTransaction transaction5 = manager5.beginTransaction();
-            transaction5.replace(R.id.fragment_container, fragment5);
-            transaction5.commit();
-        } else if (id == R.id.order_medicine) {
+            Intent i=new Intent(getApplicationContext(),doctors.class);
+            i.putExtra("a","medicine");
+            startActivity(i);
+
+        } else if (id == R.id.order_prescription) {
+//            Intent i=new Intent(getApplicationContext(),doctors.class);
+//            i.putExtra("a","medicine");
+//            startActivity(i);
             Intent i=new Intent(getApplicationContext(),orderby_Prescription.class);
             startActivity(i);
 
@@ -208,14 +210,16 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.review_product) {
             Intent i=new Intent(getApplicationContext(),doctors.class);
-            i.putExtra("a","hgghg");
+            i.putExtra("a","req");
             startActivity(i);
 
         } else if (id == R.id.rate_us) {
 
         }else if(id==R.id.request_product)
         {
-
+            Intent i=new Intent(getApplicationContext(),doctors.class);
+            i.putExtra("a","req");
+            startActivity(i);
         }else if(id==R.id.feedback)
         {
 

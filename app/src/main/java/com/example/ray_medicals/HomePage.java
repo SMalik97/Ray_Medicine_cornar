@@ -36,9 +36,12 @@ public class HomePage extends Fragment {
          obp.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-                 Intent i=new Intent(getContext(),doctors.class);
-                 i.putExtra("a","prescription");
+//                 Intent i=new Intent(getContext(),doctors.class);
+//                 i.putExtra("a","prescription");
+//                 startActivity(i);
+                 Intent i=new Intent(getContext(),orderby_Prescription.class);
                  startActivity(i);
+
              }
          });
 

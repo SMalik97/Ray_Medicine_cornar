@@ -131,7 +131,6 @@ String phone;
 
                 });
     }
-
     private void sendVerificationCode(String number){
 
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
